@@ -33,3 +33,6 @@ client_secrets.json
 node_modules/
 *.code-workspace
 **/target
+.classpath
+.project
+.settings
