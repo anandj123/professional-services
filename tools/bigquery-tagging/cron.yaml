@@ -1,0 +1,6 @@
+# cron.yaml
+cron:
+- description: "test bigquery tagging"
+  url: /
+  schedule: every 1 mins
+ 
