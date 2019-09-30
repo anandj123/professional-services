@@ -69,6 +69,7 @@ Being able to group queries into buckets can be important for those managing ava
 #### Configure cron scheduler for GAE
 
 * update cron.yaml file to setup appropriate schedule for triggering the GAE service.
+* Deploy the cron service using ```gcloud app deploy cron.yaml```
 
 ## TODO
 
