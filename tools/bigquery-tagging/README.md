@@ -60,9 +60,9 @@ Being able to group queries into buckets can be important for those managing ava
 * Checkout, review code and uncomment/modify settings if desired.
 * Make appropriate entries into ```config.ini``` file. The properties that needs update are
 
-    * PROJECT_ID = <project id of bigquery logs dataset>
-    * DATASET_ID = <bigquery logs dataset id>
-    * TABLE_ID = <query_tag>
+    * PROJECT_ID = ```project id of bigquery logs dataset```
+    * DATASET_ID = ```bigquery logs dataset id```
+    * TABLE_ID = ```query_tag```
 
 * Use ```gcloud app deploy``` to deploy the app using GAE best practices.
 
