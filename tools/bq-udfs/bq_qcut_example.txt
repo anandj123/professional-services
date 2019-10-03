@@ -1,0 +1,20 @@
+#--------------------------------------------------------------
+# User defined function to do calculation like pandas qcut
+#--------------------------------------------------------------
+CREATE TEMP FUNCTION qcut(buckets INT64, countA INT64, val FLOAT64) 
+RETURNS INT64
+LANGUAGE js
+AS '''
+return Math.floor(val * (buckets / countA) - (buckets / countA));
+
+''';
+
+WITH countA AS (select count(columnA) as c from `table_name`)
+  
+select 
+    ColumnA, 
+    countA.*, 
+    rank() over(order by ColumnA) rank, 
+    qcut(20, countA.c, rank() over(order by ColumnA))
+from `table_name` 
+cross join countA
