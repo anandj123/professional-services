@@ -8,6 +8,14 @@ CREATE TEMP FUNCTION qcut(buckets INT64, countA INT64, val FLOAT64) RETURNS INT6
   cast(floor(val * (buckets / countA) - (buckets / countA)) as int64)
 );
 
+#--------------------------------------------------------------
+# Analytics function rank() over() throws out of memory errors when ran
+# on a large dataset. So here the total dataset is divided into
+# 200 buckets and each one is ranked individually. Then they are
+# combined by adding the sum of the records in all the previous
+# buckets.
+#--------------------------------------------------------------
+
 select 
   HH_ID
   , Scores
